@@ -30,6 +30,7 @@ const modalDriverFactory = ({ element }) => {
     },
     /** returns the element of the modal content (helpful to initialize a layout testkit) */
     getContent,
+    /** returns the style of the modal content */
     getContentStyle: () => getContent().style,
     /** returns the modal aria-label value as given in contentLabel property */
     getContentLabel: () => getContent().getAttribute('aria-label'),
