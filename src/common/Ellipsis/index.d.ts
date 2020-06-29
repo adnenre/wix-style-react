@@ -1,10 +1,13 @@
 import { TooltipCommonProps } from '../../common';
 import * as React from 'react';
 
-export interface EllipsisProps extends TooltipCommonProps {
+export interface EllipsisCommonProps extends TooltipCommonProps {
   className?: string;
   ellipsis?: boolean;
   showTooltip?: boolean;
+}
+
+export interface EllipsisProps extends EllipsisCommonProps {
   render<T>(
     ref: React.Ref<T>,
     ellipsisClasses: (className: string) => string,
@@ -13,6 +16,7 @@ export interface EllipsisProps extends TooltipCommonProps {
 
 export default class Ellipsis extends React.PureComponent<EllipsisProps> {}
 
-export function extractEllipsisProps(
-  ...props: any[]
-): { ellipsisProps: any; componentProps: EllipsisProps };
+export function extractEllipsisProps<T>(
+  props: T,
+  EllipsisProps,
+): { ellipsisProps: T; componentProps: EllipsisProps };
