@@ -17,6 +17,5 @@ export interface EllipsisProps extends EllipsisCommonProps {
 export default class Ellipsis extends React.PureComponent<EllipsisProps> {}
 
 export function extractEllipsisProps<T>(
-  props: T,
-  EllipsisProps,
+  ...props: any[]
 ): { ellipsisProps: T; componentProps: EllipsisProps };
