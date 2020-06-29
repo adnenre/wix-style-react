@@ -101,7 +101,7 @@ describe('Modal', () => {
             />,
           );
 
-          expect((await driver.getContent().style).maxHeight).toBe(
+          expect((await driver.getContent()).style.maxHeight).toBe(
             'calc(100vh - 48px)',
           );
         });

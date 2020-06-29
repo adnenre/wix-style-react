@@ -31,7 +31,8 @@ export const modalUniDriverFactory = (base, body) => {
     clickOnOverlay: () => getOverlay().click(),
     clickOnCloseButton: () => getCloseButton().click(),
     /** returns the element of the modal content (helpful to initialize a layout testkit) */
-    getContent,
+    // eslint-disable-next-line no-restricted-properties
+    getContent: async () => await getContent().getNative(),
     /** returns the style of the modal content */
     getContentStyle: async () => await getContent()._prop('style'),
     /** returns the modal aria-label value as given in contentLabel property */
